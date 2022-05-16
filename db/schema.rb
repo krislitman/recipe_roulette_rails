@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 2022_05_16_011447) do
   end
 
   create_table "recipe_categories", force: :cascade do |t|
-    t.bigint "recipes_id", null: false
-    t.bigint "categories_id", null: false
+    t.bigint "recipe_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["categories_id"], name: "index_recipe_categories_on_categories_id"
-    t.index ["recipes_id"], name: "index_recipe_categories_on_recipes_id"
+    t.index ["category_id"], name: "index_recipe_categories_on_category_id"
+    t.index ["recipe_id"], name: "index_recipe_categories_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -43,6 +43,6 @@ ActiveRecord::Schema.define(version: 2022_05_16_011447) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "recipe_categories", "categories", column: "categories_id"
-  add_foreign_key "recipe_categories", "recipes", column: "recipes_id"
+  add_foreign_key "recipe_categories", "categories"
+  add_foreign_key "recipe_categories", "recipes"
 end
