@@ -6,5 +6,7 @@ RSpec.describe Recipe, type: :model do
         it { should validate_presence_of :author }
     end
     describe "Relationships" do
+        it { should have_many(:recipe_categories) }
+        it { should have_many(:categories).through(:recipe_categories) }
     end
 end
