@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 # Hide environment variables
 gem 'figaro'
+# Rails Admin
+gem 'rails_admin'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -48,6 +50,8 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
