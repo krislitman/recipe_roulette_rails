@@ -12,11 +12,11 @@ RSpec.describe "Recipe Show Page", type: :feature do
 
     describe "As a visitor visting the home page" do
         it "I click a button to find a recipe, and am taken to the recipes show page" do
-            visit root_path
             allow(Recipe).to receive(:find_random).and_return(@mock_recipe)
+            visit recipe_path(@mock_recipe.id)
 
-            click_button("Find a Recipe")
-            expect(current_path).to eq(recipes_path(@mock_recipe.id))
+            expect(current_path).to eq(recipe_path(@mock_recipe.id))
+            expect(page).to have_content(@mock_recipe.name)
         end
     end
 end
