@@ -3,7 +3,5 @@ Rails.application.routes.draw do
     root to: "home#index"
 
 #   Recipes
-    namespace :random do
-        resources :recipe, only: [:show]
-    end
+    resources :recipes, only: [:index, :show]
 end

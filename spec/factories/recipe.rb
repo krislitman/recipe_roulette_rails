@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :recipe do
-      sequence(:name) { |n| "#{Faker::Food.dish}} #{n}" }
+      sequence(:name) { |n| "#{Faker::Food.dish} #{n}" }
       serves { "#{Faker::Number.between(from: 1, to: 10)}" }
       prep_time { "#{Faker::Number.between(from: 1, to: 60)} Minutes" }
       cooking_time { "#{Faker::Number.between(from: 1, to: 60)} Minutes" }

@@ -1,3 +1,5 @@
 class HomeController < ApplicationController
-    def index; end
+    def index
+        @recipe = Recipe.find_random
+    end
 end
