@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
     def index
-        @recipe = Recipe.find_random
-        require 'pry'; binding.pry
+        @random_recipe = Recipe.find_random
     end
 end
