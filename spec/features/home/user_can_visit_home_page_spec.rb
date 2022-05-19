@@ -8,5 +8,11 @@ RSpec.describe "Home Page", type: :feature do
             expect(current_path).to eq(root_path)
             expect(page).to have_content("Welcome to Recipe Roulette")
         end
+
+        it "I see a buttom to find a random recipe" do
+            visit root_path
+
+            expect(page).to have_button("Find a Recipe")
+        end
     end
 end
