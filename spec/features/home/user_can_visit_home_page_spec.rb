@@ -19,7 +19,6 @@ RSpec.describe "Home Page", type: :feature do
 
         it "I see a buttom to find a random recipe" do
             visit root_path
-            # require 'pry'; binding.pry
 
             expect(page).to have_button("Find a Recipe")
         end

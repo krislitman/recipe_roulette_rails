@@ -6,5 +6,6 @@ class Recipe < ApplicationRecord
     has_many :categories, through: :recipe_categories
 
     def self.find_random
+        order("RANDOM()").first
     end
 end
