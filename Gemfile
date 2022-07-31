@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 # Rails Admin
 gem 'rails_admin'
+# Devise
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
