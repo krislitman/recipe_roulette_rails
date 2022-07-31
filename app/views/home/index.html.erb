@@ -8,4 +8,8 @@
     <%= link_to 'Sign In', new_user_session_path %>
 <% end %>
 
+<% if current_user && current_user.admin? %>
+    <%= link_to 'Admin Dashboard', rails_admin.dashboard_path %>
+<% end %>
+
 
