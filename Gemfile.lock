@@ -77,6 +77,7 @@ GEM
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancan (1.6.10)
     capybara (3.37.1)
       addressable
       matrix
@@ -110,6 +111,9 @@ GEM
       thor (>= 0.14.0, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -249,6 +253,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
     turbo-rails (1.0.1)
@@ -287,11 +292,13 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.4)
+  cancan
   capybara
   devise
   factory_bot_rails
   faker
   figaro
+  haml
   jbuilder (~> 2.7)
   launchy
   listen (~> 3.3)

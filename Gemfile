@@ -27,6 +27,10 @@ gem 'figaro'
 gem 'rails_admin'
 # Devise
 gem 'devise'
+# CanCan
+gem "cancan"
+# Haml
+gem 'haml'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
