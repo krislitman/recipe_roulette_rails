@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -28,9 +30,11 @@ gem 'rails_admin'
 # Devise
 gem 'devise'
 # CanCan
-gem "cancan"
+gem 'cancan'
 # Haml
 gem 'haml'
+# Rubocop
+gem 'rubocop'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -40,14 +44,14 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry'
   gem 'capybara'
-  gem 'rspec-rails'
-  gem 'launchy'
-  gem 'orderly'
-  gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'launchy'
+  gem 'orderly'
+  gem 'pry'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -55,11 +59,11 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'listen', '~> 3.3'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'rack-mini-profiler', '~> 2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
