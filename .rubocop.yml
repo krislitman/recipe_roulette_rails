@@ -1,0 +1,21 @@
+AllCops:
+  NewCops: enable
+
+  Exclude:
+    - 'db/**/*.rb'
+    - 'config/**/*.rb'
+    - 'bin/*'
+    - 'app/models/ability.rb'
+    - 'app/models/application_record.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'spec/rails_helper.rb'
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'app/views/**/*'
