@@ -1,0 +1,18 @@
+%h1 Create a new Recipe
+
+= form_with model: Recipe.new do |form|
+  = form.text_field :name, placeholder: "Enter recipe name"
+  %br
+  = form.text_field :serves, placeholder: "Serves how many?"
+  %br
+  = form.text_field :prep_time, placeholder: "What is the prep time?"
+  %br
+  = form.text_field :cooking_time, placeholder: "What is the cooking time?"
+  %br
+  = form.text_area :ingredients, size: "23x10", placeholder: "What are the ingredients?"
+  %br
+  = form.text_area :instructions, size: "23x10", placeholder: "How do I make it?"
+  %br
+  = form.text_field :author, placeholder: "Enter author name"
+  %br
+  = form.submit "Submit"

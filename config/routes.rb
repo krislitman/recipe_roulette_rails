@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   #   Recipes
-  resources :recipes, only: %i[index show]
+  resources :recipes
 end
