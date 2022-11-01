@@ -11,7 +11,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(show_params[:id])
   end
 
-  def new; end
+  def new
+    @recipe = Recipe.new
+  end
 
   def create
     recipe = Recipe.new(create_params)
