@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
+def generate_test_ingredients
+  ingredients = []
+
+  rand(10).times do
+    ingredients.push(Faker::Food.ingredient)
+  end
+
+  ingredients.join(', ')
+end
+
 100.times do |i|
   category = Category.create!(
     {
