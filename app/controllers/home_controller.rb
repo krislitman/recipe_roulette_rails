@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @random_recipe = Recipe.find_random
+    @recipe = Recipe.find_random
   end
 end

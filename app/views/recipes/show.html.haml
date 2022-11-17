@@ -1,3 +1,22 @@
-%h1 Recipe
+%h1= @recipe.name
 
-%strong= @recipe.name
+%br
+Serves:
+%strong= @recipe.serves
+%br
+Prep Time:
+%strong= @recipe.prep_time
+%br
+Cooking Time:
+%strong= @recipe.cooking_time
+%br
+Ingredients:
+%strong= @recipe.ingredients
+%br
+Instructions:
+%strong= @recipe.instructions
+%br
+Author:
+%strong= @recipe.author
+
+#{ button_to 'Home', root_path, method: :get }
