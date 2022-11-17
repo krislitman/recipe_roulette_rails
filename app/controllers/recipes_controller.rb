@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(show_params[:id])
+    Rails.logger.info "recipe_id=#{@recipe.id}"
   end
 
   def new

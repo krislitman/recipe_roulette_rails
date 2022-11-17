@@ -35,6 +35,8 @@ gem 'cancan'
 gem 'haml'
 # Rubocop
 gem 'rubocop'
+# Lograge
+gem 'lograge'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
