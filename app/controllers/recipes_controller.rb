@@ -3,13 +3,11 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @recipes = Recipe.all
-  end
+  include Loggable
 
   def show
     @recipe = Recipe.find(show_params[:id])
-    Rails.logger.info "recipe_id=#{@recipe.id}"
+    @random_recipe = Recipe.find_random
   end
 
   def new
@@ -20,10 +18,14 @@ class RecipesController < ApplicationController
     recipe = Recipe.new(create_params)
 
     if recipe.save
+      log_create_recipe(:success, current_user, recipe)
+
       flash[:notice] = "#{recipe.name} was successfully created"
 
       redirect_to recipes_path
     else
+      log_create_recipe(nil, current_user)
+
       flash[:error] = "Recipe not created, please try again"
 
       render :new

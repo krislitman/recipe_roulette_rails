@@ -7,6 +7,9 @@ class Recipe < ApplicationRecord
   has_many :recipe_categories
   has_many :categories, through: :recipe_categories
 
+  has_many :user_recipes
+  has_many :recipes, through: :user_recipes
+
   before_save { generate_test_ingredients if Rails.env.test? }
 
   def self.find_random

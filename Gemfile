@@ -37,6 +37,8 @@ gem 'haml'
 gem 'rubocop'
 # Lograge
 gem 'lograge'
+# Stimulus
+gem 'stimulus-rails'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
