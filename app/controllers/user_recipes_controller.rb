@@ -34,7 +34,7 @@ class UserRecipesController < ApplicationController
     user_recipes = current_user.user_recipes.where(recipe_id: recipe.id)
 
     user_recipes.destroy_all
-    flash[:notice] = "Removed #{recipe.name} from your Recipes!".html_safe
+    flash[:notice] = "Removed #{recipe.name} from your Recipes!"
     log_destroy_user_recipe(:success, current_user, recipe)
 
     redirect_to user_recipes_path
