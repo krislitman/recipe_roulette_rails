@@ -1,0 +1,30 @@
+= form_with model: @user do |form|
+  %br
+  %p= "First Name"
+  = form.text_field :first_name, value: @address.first_name, autofocus: true
+  %br
+  %p= "Last Name"
+  = form.text_field :last_name, value: @address.last_name
+  %br
+  %p= "Address Line 1"
+  = form.text_field :line1, value: @address.line1
+  %br
+  %p= "Address Line 2"
+  = form.text_field :line2, value: @address.line2
+  %br
+  %p= "City"
+  = form.text_field :city, value: @address.city
+  %br
+  %p= "State"
+  = form.text_field :state, value: @address.state
+  %br
+  %p= "Postal Code"
+  = form.text_field :postal_code, value: @address.postal_code
+  %br
+  %p= "Country"
+  = form.select :country, Address.countries, selected: @address.country
+  %br
+  %p= "Currency"
+  = form.select :currency, Address.currencies, selected: @address.currency
+  %br
+  = form.submit "Submit"

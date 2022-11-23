@@ -1,0 +1,4 @@
+%ul
+  - current_user.recipes.each do |recipe|
+    %li= link_to recipe.name, recipe_path(recipe.id)
+    = button_to "-", user_recipe_path(recipe.id), method: :delete, params: { recipe_id: recipe.id }, class: "btn btn-secondary btn-sm"

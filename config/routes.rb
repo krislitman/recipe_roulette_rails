@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :recipes
 
-  resources :user_recipes, only: [:create]
+  resources :users, only: [:edit, :update]
+
+  resources :user_recipes, only: [:index, :create, :destroy]
 end

@@ -8,11 +8,59 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= render 'layouts/flash_messages' %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+          <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <%= link_to "Recipe Roulette", root_path, method: :get, class: "btn border" %>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <%# add items %>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Options
+                    </a>
+                    <ul class="dropdown-menu">
+                      <% if current_user %>
+                        <li>
+                          <%= link_to "Add Recipe", new_recipe_path, class: "dropdown-item" %>
+                        </li>
+                        <li>
+                          <%= link_to "My Recipes", user_recipes_path, class: "dropdown-item" %>
+                        </li>
+                        <li>
+                          <%= link_to "Preferences", edit_user_path(current_user), class: "dropdown-item" %>
+                        </li>
+                        <li>
+                          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                        </li>
+                      <% else %>
+                        <li>
+                          <%= link_to 'Sign Up', new_user_registration_path, class: "dropdown-item" %>
+                        </li>
+                        <li>
+                          <%= link_to 'Sign In', new_user_session_path, class: "dropdown-item" %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        <%= render 'layouts/flash_messages' %>
+
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

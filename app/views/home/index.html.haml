@@ -1,13 +1,7 @@
 %h1= "Welcome to Recipe Roulette"
 
 - if current_user
-    #{ link_to 'Sign Out', destroy_user_session_path, method: :delete }
-
     #{ button_to 'Find a random Recipe!', recipe_path(@recipe.id), method: :get }
 - else
-    #{ link_to 'Sign Up', new_user_registration_path }
-
-    #{ link_to 'Sign In', new_user_session_path }
-
 - if current_user && current_user.admin?
     #{ link_to 'Admin Dashboard', rails_admin.dashboard_path }

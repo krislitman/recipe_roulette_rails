@@ -18,14 +18,13 @@ class RecipesController < ApplicationController
     recipe = Recipe.new(create_params)
 
     if recipe.save
+      current_user.recipes << recipe
       log_create_recipe(:success, current_user, recipe)
-
       flash[:notice] = "#{recipe.name} was successfully created"
 
-      redirect_to recipes_path
+      redirect_to user_recipes_path
     else
       log_create_recipe(nil, current_user)
-
       flash[:error] = "Recipe not created, please try again"
 
       render :new
